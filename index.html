@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Prime Security - Consulta EPP</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f2f4f7;
+            color: #222;
+        }
+
+        .encabezado {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .encabezado h1 {
+            margin: 0;
+            font-size: 30px;
+        }
+
+        .encabezado p {
+            margin: 8px 0 0;
+            color: #d1d5db;
+        }
+
+        .contenedor {
+            max-width: 600px;
+            margin: 35px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.12);
+        }
+
+        .titulo {
+            text-align: center;
+            color: #111827;
+            margin-bottom: 25px;
+        }
+
+        .dato {
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid #ddd;
+            padding: 13px 0;
+        }
+
+        .dato strong {
+            color: #374151;
+        }
+
+        .valor {
+            text-align: right;
+        }
+
+        .estado {
+            color: green;
+            font-weight: bold;
+        }
+
+        .codigo {
+            text-align: center;
+            background: #f3f4f6;
+            padding: 12px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .pie {
+            text-align: center;
+            margin-top: 25px;
+            color: #6b7280;
+            font-size: 13px;
+        }
+
+        .error {
+            text-align: center;
+            color: #b91c1c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="encabezado">
+        <h1>PRIME SECURITY</h1>
+        <p>Sistema de consulta de Equipo de Protección Personal</p>
+    </div>
+
+    <div class="contenedor">
+
+        <h2 class="titulo">Consulta de EPP</h2>
+
+        <div class="codigo">
+            Código: <span id="codigo">EMP-002</span>
+        </div>
+
+        <div id="informacion">
+
+            <div class="dato">
+                <strong>Empresa:</strong>
+                <span class="valor">Maquiladora Assembly</span>
+            </div>
+
+            <div class="dato">
+                <strong>Encargado:</strong>
+                <span class="valor">Pedro García</span>
+            </div>
+
+            <div class="dato">
+                <strong>Producto:</strong>
+                <span class="valor">Guantes de seguridad I</span>
+            </div>
+
+            <div class="dato">
+                <strong>Cantidad:</strong>
+                <span class="valor">20</span>
+            </div>
+
+            <div class="dato">
+                <strong>Fecha de entrega:</strong>
+                <span class="valor">13/08/2026</span>
+            </div>
+
+            <div class="dato">
+                <strong>Fecha de vencimiento:</strong>
+                <span class="valor">13/08/2027</span>
+            </div>
+
+            <div class="dato">
+                <strong>Estado:</strong>
+                <span class="valor estado">Activo</span>
+            </div>
+
+        </div>
+
+        <div class="pie">
+            Prime Security © 2026
+        </div>
+
+    </div>
+
+</body>
+</html>
