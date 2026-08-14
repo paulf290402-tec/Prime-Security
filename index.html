@@ -87,6 +87,22 @@
             color: #b91c1c;
             font-weight: bold;
         }
+
+        @media (max-width: 600px) {
+            .contenedor {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .dato {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .valor {
+                text-align: left;
+            }
+        }
     </style>
 </head>
 
@@ -102,47 +118,10 @@
         <h2 class="titulo">Consulta de EPP</h2>
 
         <div class="codigo">
-            Código: <span id="codigo">EMP-002</span>
+            Código: <span id="codigo"></span>
         </div>
 
-        <div id="informacion">
-
-            <div class="dato">
-                <strong>Empresa:</strong>
-                <span class="valor">Maquiladora Assembly</span>
-            </div>
-
-            <div class="dato">
-                <strong>Encargado:</strong>
-                <span class="valor">Pedro García</span>
-            </div>
-
-            <div class="dato">
-                <strong>Producto:</strong>
-                <span class="valor">Guantes de seguridad I</span>
-            </div>
-
-            <div class="dato">
-                <strong>Cantidad:</strong>
-                <span class="valor">20</span>
-            </div>
-
-            <div class="dato">
-                <strong>Fecha de entrega:</strong>
-                <span class="valor">13/08/2026</span>
-            </div>
-
-            <div class="dato">
-                <strong>Fecha de vencimiento:</strong>
-                <span class="valor">13/08/2027</span>
-            </div>
-
-            <div class="dato">
-                <strong>Estado:</strong>
-                <span class="valor estado">Activo</span>
-            </div>
-
-        </div>
+        <div id="informacion"></div>
 
         <div class="pie">
             Prime Security © 2026
@@ -150,5 +129,85 @@
 
     </div>
 
+    <script>
+
+        // Base de datos de demostración
+        const empresas = {
+
+            "EMP-002": {
+                empresa: "Maquiladora Assembly",
+                encargado: "Pedro García",
+                producto: "Guantes de seguridad I",
+                cantidad: "20",
+                fechaEntrega: "13/08/2026",
+                fechaVencimiento: "13/08/2027",
+                estado: "Activo"
+            }
+
+        };
+
+        // Obtener el código de la dirección
+        const parametros = new URLSearchParams(window.location.search);
+        const codigo = parametros.get("codigo");
+
+        const codigoMostrar = document.getElementById("codigo");
+        const informacion = document.getElementById("informacion");
+
+        if (codigo && empresas[codigo]) {
+
+            const datos = empresas[codigo];
+
+            codigoMostrar.textContent = codigo;
+
+            informacion.innerHTML = `
+                <div class="dato">
+                    <strong>Empresa:</strong>
+                    <span class="valor">${datos.empresa}</span>
+                </div>
+
+                <div class="dato">
+                    <strong>Encargado:</strong>
+                    <span class="valor">${datos.encargado}</span>
+                </div>
+
+                <div class="dato">
+                    <strong>Producto:</strong>
+                    <span class="valor">${datos.producto}</span>
+                </div>
+
+                <div class="dato">
+                    <strong>Cantidad:</strong>
+                    <span class="valor">${datos.cantidad}</span>
+                </div>
+
+                <div class="dato">
+                    <strong>Fecha de entrega:</strong>
+                    <span class="valor">${datos.fechaEntrega}</span>
+                </div>
+
+                <div class="dato">
+                    <strong>Fecha de vencimiento:</strong>
+                    <span class="valor">${datos.fechaVencimiento}</span>
+                </div>
+
+                <div class="dato">
+                    <strong>Estado:</strong>
+                    <span class="valor estado">${datos.estado}</span>
+                </div>
+            `;
+
+        } else {
+
+            codigoMostrar.textContent = codigo || "Sin código";
+
+            informacion.innerHTML = `
+                <div class="error">
+                    No se encontró información para este código.
+                </div>
+            `;
+        }
+
+    </script>
+
 </body>
-</html>
+</html
