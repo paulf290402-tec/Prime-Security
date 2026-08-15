@@ -132,36 +132,39 @@
     <script>
 
         // Base de datos de demostración
-        const empresas = {
+       const empresas = {
 
-            "EMP-002": {
-                empresa: "Maquiladora Assembly",
-                encargado: "Pedro García",
-                producto: "Guantes de seguridad I",
-                cantidad: "20",
-                fechaEntrega: "13/08/2026",
-                fechaVencimiento: "13/08/2027",
-                estado: "Activo"
-            },
-                  "EMP-001": {
-                empresa: "Manufacturas del Norte",
-                encargado: "Luis Hernandez",
-                producto: "Cascos de seguridad ",
-                cantidad: "15",
-                fechaEntrega: "13/08/2026",
-                fechaVencimiento: "13/08/2027",
-                estado: "Activo"
-                  },
-              "EMP-003": {
-                empresa: "Industria del Pacifico",
-                encargado: "Carlos Ramirez",
-                producto: "Guantes de seguridad ",
-                cantidad: "20",
-                fechaEntrega: "14/08/2026",
-                fechaVencimiento: "14/08/2027",
-                estado: "Activo"
-        };
+    "EMP-002": {
+        empresa: "Maquiladora Assembly",
+        encargado: "Pedro García",
+        producto: "Guantes de seguridad T",
+        cantidad: "20",
+        fechaEntrega: "13/08/2026",
+        fechaVencimiento: "13/08/2027",
+        estado: "Activo"
+    },
 
+    "EMP-001": {
+        empresa: "Manufacturas del Norte",
+        encargado: "Luis Hernandez",
+        producto: "Cascos de seguridad",
+        cantidad: "15",
+        fechaEntrega: "13/08/2026",
+        fechaVencimiento: "13/08/2027",
+        estado: "Activo"
+    },
+
+    "EMP-003": {
+        empresa: "Industria del Pacifico",
+        encargado: "Carlos Ramirez",
+        producto: "Guantes de seguridad",
+        cantidad: "20",
+        fechaEntrega: "14/08/2026",
+        fechaVencimiento: "14/08/2027",
+        estado: "Activo"
+    }
+
+};
         // Obtener el código de la dirección
         const parametros = new URLSearchParams(window.location.search);
         const codigo = parametros.get("codigo");
